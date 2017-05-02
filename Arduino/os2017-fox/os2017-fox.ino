@@ -4,7 +4,15 @@
 #include <VirtualWire.h>
 #include <PikoFox.h>
 #include <OS2017_Common.h>
+#include <OS2017_Fox_Config.h>
 #include <TinyMillis.h>
+
+#ifndef OS2017_FOX_CONFIG_H
+#error "Must define: \n" \
+       "  TO_CALL: the to callsign (e.g. BEACON)\n" \
+       "  FROM_CALL: the from callsign (e.g. your amateur callsign)\n" \
+       "  BEACON_BODY: message indicating additional info about fox hunt for CW ID (e.g. 'Fox Hunt: http://bit.ly/your_hunt_info"
+#endif
 
 #define WPM 10
 const byte FOX_ID = 0;
@@ -13,15 +21,12 @@ const byte LED4_PIN = 4;
 const byte LED2_PIN = 2;
 const byte LED1_PIN = 1;
 const byte NFOXES = 2;
-const char TO_CALL[] = "BEACON";
-const char FROM_CALL[] = "KI6KTE-2";
-const char BEACON_BODY[] = "OS2017 Fox Hunt: http://bit.ly/2p2Dsjm";
-const char* BEACON_PARTS[] = { TO_CALL, FROM_CALL, BEACON_BODY };
-const byte BEACON_PARTS_LEN = sizeof(BEACON_PARTS) / sizeof(BEACON_PARTS[0]);
 const uint8_t PKTS_PER_ROUND = 30;
 const uint32_t INTER_PKT_DELAY_MS = 1000;
 const uint16_t BIT_RATE = OS2017_FOX_BIT_RATE;
 const uint32_t  INTER_MSG_DELAY = 30 * 1000; // 30 s
+const char* BEACON_PARTS[] = { TO_CALL, FROM_CALL, BEACON_BODY };
+const byte BEACON_PARTS_LEN = sizeof(BEACON_PARTS) / sizeof(BEACON_PARTS[0]);
 
 enum state {
   ST_INIT,
