@@ -18,6 +18,19 @@ your badge extra fancy.
     Matthew Van Gundy, KI6KTE  
     Tel: 805-699-6134
 
+## The Code
+
+First, check out the repo:
+
+```sh
+git clone https://github.com/singlethink/os2017-bsides-fox-hunt
+git submodule init
+git submodule update
+```
+
+* [Fox](Arduino/os2017-fox) (transmitter)
+
+* [Hound](Arduino/os2017-hound) (simple fox receiver)
 
 ## Brought to you by
 
