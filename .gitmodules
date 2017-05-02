@@ -1,6 +1,6 @@
 [submodule "Arduino/VirtualWire"]
-	path = Arduino/VirtualWire
+	path = Arduino/libraries/VirtualWire
 	url = https://github.com/singlethink/VirtualWire.git
 [submodule "Arduino/MorseEnDecoder"]
-	path = Arduino/MorseEnDecoder
+	path = Arduino/libraries/MorseEnDecoder
 	url = https://github.com/singlethink/MorseEnDecoder.git
