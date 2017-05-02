@@ -1,0 +1,19 @@
+#######################################
+# Syntax Coloring Map For TinyMillis
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+tinyMillisSetup	KEYWORD2
+tinyMillis	KEYWORD2
+tinyMillisTimerExpired	KEYWORD2
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
