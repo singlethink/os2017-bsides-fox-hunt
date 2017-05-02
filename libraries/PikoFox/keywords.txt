@@ -1,0 +1,29 @@
+#######################################
+# Syntax Coloring Map For PikoFox
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+PF_Fox	KEYWORD1
+PF_Msg	KEYWORD1
+PF_IdMsg	KEYWORD1
+PF_BeaconMsg	KEYWORD1
+PF_Util	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+cwMessage	KEYWORD2
+available	KEYWORD2
+run	KEYWORD2
+setto	KEYWORD2
+setfrom	KEYWORD2
+init	KEYWORD2
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+PF_MAX_MSG_LEN	LITERAL1
