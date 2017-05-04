@@ -8,6 +8,17 @@ your badge extra fancy.
 
 ## Events
 
+### BSides Knoxville 2017
+
+* When: May 5, 2017 0900 EST -- 1700 EST
+* Frequency: 433.920 MHz
+* Where: Market Square, Knoxville, Tennessee
+* Point of Contact: In case of problems, interference, etc. contact
+
+    Matthew Van Gundy, KI6KTE  
+    Tel: 805-699-6134
+
+
 ### Offensive Summit 2017
 
 * When: May 2, 2017 0900 EST -- May 4, 2017 1700 EST
@@ -28,9 +39,48 @@ git submodule init
 git submodule update
 ```
 
+* [Hound](Arduino/os2017-hound) (simple fox receiver)
+
 * [Fox](Arduino/os2017-fox) (transmitter)
 
-* [Hound](Arduino/os2017-hound) (simple fox receiver)
+
+## Protocol
+
+Each fox identifies itself by transmitting messages on 433.920 MHz
+according to the following schedule:
+
+1. 30 data packets
+2. CW ID @ 10 WPM
+3. 30 seconds of silence
+4. Goto 1
+
+Badge receivers can only receive the initial 30 data packets.  So,
+after 30-ish seconds, each fox will go silent for approximately 1-1.5
+minutes while ID-ing and waiting for the start of its next transmit
+period.
+
+Data packets are encoded and transmitted via simile On-Off Keying
+using
+[Virtual Wire](http://www.airspayce.com/mikem/arduino/VirtualWire/).
+There are multiple packet formats, including:
+
+```c
+struct IdMsg {
+    byte foxId;       // unique id of the fox
+    uint32_t seq;     // monotonically incrementing sequence number
+    byte tag = 0;
+    char to_call[9];
+    char from_call[9];
+};
+
+struct BeaconMsg {
+    byte foxId;
+    uint32_t seq;
+    byte tag = 0;
+};
+```
+
+For more information, see [PikoFox.h](Arduino/libraries/PikoFox/PikoFox.h).
 
 ## Brought to you by
 
@@ -38,4 +88,4 @@ git submodule update
 * Jared Pendleton, KK4DNV
 * Everett Stiles
 * Jed Eaton
-* And many volunteers
+* And many molten lead wielding volunteers
