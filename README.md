@@ -59,7 +59,7 @@ after 30-ish seconds, each fox will go silent for approximately 1-1.5
 minutes while ID-ing and waiting for the start of its next transmit
 period.
 
-Data packets are encoded and transmitted via simile On-Off Keying
+Data packets are encoded and transmitted via simple On-Off Keying
 using
 [Virtual Wire](http://www.airspayce.com/mikem/arduino/VirtualWire/).
 There are multiple packet formats, including:
