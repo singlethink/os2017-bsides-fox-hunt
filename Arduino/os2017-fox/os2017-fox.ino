@@ -15,16 +15,15 @@
 #endif
 
 #define WPM 10
-const byte FOX_ID = 0;
 const byte RADIO_PIN = 0;
 const byte LED4_PIN = 4;
 const byte LED2_PIN = 2;
 const byte LED1_PIN = 1;
 const byte NFOXES = 2;
-const uint8_t PKTS_PER_ROUND = 30;
-const uint32_t INTER_PKT_DELAY_MS = 1000;
+const uint8_t PKTS_PER_ROUND = OS2017_FOX_PKTS_PER_ROUND;
+const uint32_t INTER_PKT_DELAY_MS = OS2017_FOX_INTER_PKT_DELAY_MS;
 const uint16_t BIT_RATE = OS2017_FOX_BIT_RATE;
-const uint32_t  INTER_MSG_DELAY = 30 * 1000; // 30 s
+const uint32_t  INTER_MSG_DELAY = OS2017_FOX_INTER_MSG_DELAY;
 const char* BEACON_PARTS[] = { TO_CALL, FROM_CALL, BEACON_BODY };
 const byte BEACON_PARTS_LEN = sizeof(BEACON_PARTS) / sizeof(BEACON_PARTS[0]);
 
