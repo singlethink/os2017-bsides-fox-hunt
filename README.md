@@ -76,7 +76,7 @@ struct IdMsg {
 struct BeaconMsg {
     byte foxId;
     uint32_t seq;
-    byte tag = 0;
+    byte tag = 1;
 };
 ```
 
