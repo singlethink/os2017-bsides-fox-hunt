@@ -66,6 +66,8 @@ void doPkt() {
     // we can't do anything while the transmitter is active
     // just go around the loop again
     return;
+  } else {
+    displayState(state);
   }
   if(pktsSent == PKTS_PER_ROUND) {
     // We're done sending packets go to ID state
@@ -77,6 +79,9 @@ void doPkt() {
     return;
   }
   // We can initiate sending a packet...
+#ifdef TX_BUSY_LED
+  displayState(4 | state);  // show we're transmitting by forcing the 4-bit
+#endif
   if(pktsSent == 0 || pktsSent == PKTS_PER_ROUND - 1) {
     // send id
     PF_IdMsg *idMsg = PF_IdMsg::init(&msg);
