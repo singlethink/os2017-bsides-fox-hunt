@@ -6,7 +6,7 @@
 /*Include the VirtualWire library */
 #include <VirtualWire.h>
 
-const byte FOX_Id = 0;  // What fox do we want to listen to...
+const byte FOX_Id = OS2017_FOX0_ID;  // What fox do we want to listen to...
 /* Digital IO pin that will be used for receiving data from the receiver */
 const int RX_DIO_Pin = 1;
 const int LED_Pin = 4;
@@ -59,7 +59,7 @@ void loop()
         baseMsg = msg.toMsg(msgLen);
     }
 
-    if(baseMsg && baseMsg->foxId == FOX_Id) {
+    if(baseMsg && (baseMsg->foxId == FOX_Id || baseMsg->foxId == OS2017_TEST_FOX_ID)) {
       if(baseMsg->seq - last_seq > 100) {
         // missed 100 messages
         digitalWrite(LED_Pin, LOW);
