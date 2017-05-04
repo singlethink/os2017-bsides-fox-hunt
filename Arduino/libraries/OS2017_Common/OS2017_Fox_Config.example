@@ -1,0 +1,9 @@
+#ifndef OS2017_FOX_CONFIG_H
+#define OS2017_FOX_CONFIG_H
+
+const byte FOX_ID = 0;
+// const char TO_CALL[] = FIXME;
+// const char FROM_CALL[] = FIXME;
+// const char BEACON_BODY[] = "FIXME Fox Hunt: http://FIXME";
+
+#endif
