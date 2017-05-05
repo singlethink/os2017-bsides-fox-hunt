@@ -16,7 +16,13 @@ your badge extra fancy.
 * Point of Contact: In case of problems, interference, etc. contact
 
     Matthew Van Gundy, KI6KTE  
+    Monitoring Frequency: 146.565 MHz
     Tel: 805-699-6134
+
+#### Submitting Foxes
+
+Text your name, the fox id, and the fox passcode via
+[Signal](https://whispersystems.org/) to 805-699-6134.
 
 
 ### Offensive Summit 2017
